@@ -1,1 +1,13 @@
 # sudoku_solver
+
+## Usage
+
+Type your sudoku inside the test.txt file
+Write a hashtag followed immediately by the size of a sudoku square (3 for a 9\*9 sudoku...)
+Then write the whole sudoku.
+
+Run the executable.
+
+## Compilation
+
+Simply run make

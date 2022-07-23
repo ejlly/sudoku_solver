@@ -10,7 +10,7 @@ class Possibility{
 		int nbp;
 		
 		Possibility(int new_size_2){
-			bool *possible = (bool *)malloc(new_size_2*sizeof(bool));
+			bool *possible = new bool[new_size_2*sizeof(bool)];
 			for(int i(0); i<new_size_2; i++){
 				possible[i] = false;
 			}
@@ -19,7 +19,7 @@ class Possibility{
 		}
 
 		~Possibility(){
-			free(possible);
+			delete[] possible;
 		}
 };
 
@@ -36,7 +36,7 @@ class Sudoku{
 			size_2 = size*size;
 			size_4 = size_2*size_2;
 
-			Possibility **cases = (Possibility **)malloc(size_4 * sizeof(Possibility *));
+			Possibility **cases = new Possibility*[size_4 * sizeof(Possibility *)];
 
 			for(int i(0); i<size_4; i++){
 				cases[i] = new Possibility(size_2);
@@ -50,7 +50,7 @@ class Sudoku{
 			for(int i(0); i<size_4; i++){
 				delete cases[i];
 			}
-			free(cases);
+			delete[] cases;
 		}
 };
 
